@@ -24,7 +24,7 @@ function paintToDo(newTodo) {
   span.innerText = newTodo.text;
   const button = document.createElement("button");
   button.addEventListener("click", deleteToDo);
-  button.innerText = "❎";
+  button.innerText = "성공";
   li.appendChild(span);
   li.appendChild(button);
   toDoList.appendChild(li);
@@ -32,6 +32,11 @@ function paintToDo(newTodo) {
 
 function handleToDoSubmit(event) {
   event.preventDefault();
+  // 5개 초과할 경우 경고 메시지 출력
+  if (toDos.length >= 5) {
+    alert("계획은 한번에 5개를 초과할 수 없습니다!");
+    return;
+  }
   const newTodo = toDoInput.value;
   toDoInput.value = "";
   const newTodoObj = {

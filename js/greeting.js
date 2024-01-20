@@ -1,6 +1,7 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
+const doDoFrom = document.querySelector("#todo-form");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
@@ -14,8 +15,9 @@ function onLoginSubmit(info) {
 }
 
 function paintGreetings(username) {
-  greeting.innerText = `Hello ${username}`;
+  greeting.innerText = `${username}님,\n 짱구의 세계에 오신걸 환영합니다.`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
+  doDoFrom.classList.remove(HIDDEN_CLASSNAME); // todoform 보임
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);

@@ -5,15 +5,15 @@ const images = [
   "4.jpeg",
   "5.png",
   "6.jpeg",
-  "7.jpeg",
   "8.jpeg",
   "9.jpeg",
 ];
 
 const randomImage = images[Math.floor(Math.random() * images.length)];
 
+const backgroundBox = document.getElementById("backgroundBox");
 const backgroundImage = document.createElement("img");
 
 backgroundImage.src = `img/${randomImage}`;
 
-document.body.appendChild(backgroundImage);
+backgroundBox.appendChild(backgroundImage);
